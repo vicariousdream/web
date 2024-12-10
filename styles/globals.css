@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 30 30% 98%;
+    --foreground: 30 10% 10%;
+    --card: 30 30% 98%;
+    --card-foreground: 30 10% 10%;
+    --popover: 30 30% 98%;
+    --popover-foreground: 30 10% 10%;
+    --primary: 30 100% 50%;
+    --primary-foreground: 30 10% 10%;
+    --secondary: 30 30% 90%;
+    --secondary-foreground: 30 10% 10%;
+    --muted: 30 30% 90%;
+    --muted-foreground: 30 30% 40%;
+    --accent: 30 30% 90%;
+    --accent-foreground: 30 10% 10%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 30 10% 10%;
+    --border: 30 30% 85%;
+    --input: 30 30% 85%;
+    --ring: 30 100% 50%;
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 20 14% 4%;
+    --foreground: 60 9.1% 97.8%;
+    --card: 20 14% 4%;
+    --card-foreground: 60 9.1% 97.8%;
+    --popover: 20 14% 4%;
+    --popover-foreground: 60 9.1% 97.8%;
+    --primary: 47.9 95.8% 53.1%;
+    --primary-foreground: 26 83.3% 14.1%;
+    --secondary: 12 6.5% 15.1%;
+    --secondary-foreground: 60 9.1% 97.8%;
+    --muted: 12 6.5% 15.1%;
+    --muted-foreground: 24 5.4% 63.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 60 9.1% 97.8%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 12 6.5% 15.1%;
+    --input: 12 6.5% 15.1%;
+    --ring: 35.5 91.7% 32.9%;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.luxury-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/80 to-primary;
+}
+
+.luxury-border {
+  @apply border-2 border-primary/20 hover:border-primary/40 transition-colors;
+}
+
+/* Responsive typography */
+@layer utilities {
+  .text-responsive {
+    @apply text-base sm:text-lg md:text-xl lg:text-2xl;
+  }
+}
+
+/* Responsive padding and margin */
+@layer utilities {
+  .p-responsive {
+    @apply p-4 sm:p-6 md:p-8 lg:p-10;
+  }
+  .m-responsive {
+    @apply m-4 sm:m-6 md:m-8 lg:m-10;
+  }
+}
+
+/* Responsive grid */
+@layer utilities {
+  .grid-responsive {
+    @apply grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4;
+  }
+}
+
+@layer utilities {
+  .glow-effect {
+    --primary-rgb: 255, 165, 0; /* Adjust this to match your primary color */
+    transition: all 0.3s ease;
+  }
+  
+  .glow-effect:hover {
+    box-shadow: 0 0 10px 3px rgba(var(--primary-rgb), 0.3);
+    transform: scale(1.05);
+  }
+}
+
